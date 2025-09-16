@@ -6,7 +6,7 @@ import { AuditLog } from '@/types';
 import { mockAuditLogs } from '@/lib/mockData';
 
 export default function AuditTrail() {
-  const [logs, setLogs] = useState<AuditLog[]>(mockAuditLogs);
+  const [logs] = useState<AuditLog[]>(mockAuditLogs);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedModule, setSelectedModule] = useState<string>('all');
   const [selectedAction, setSelectedAction] = useState<string>('all');

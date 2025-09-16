@@ -11,11 +11,11 @@ import {
     FileText,
     History,
     BarChart3,
-    Settings,
-    LogOut
+    // Settings,
+    // LogOut
 } from 'lucide-react';
 
-type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'reports';
+type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'report';
 
   const menuItems: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
         { id: '', label: 'Dashboard', icon: LayoutDashboard },
@@ -23,7 +23,7 @@ type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'reports';
         { id: 'workflow', label: 'Workflow Config', icon: GitBranch },
         { id: 'forms', label: 'Form Fields', icon: FileText },
         { id: 'audit', label: 'Audit Trail', icon: History },
-        { id: 'reports', label: 'Reports', icon: BarChart3 },
+        { id: 'report', label: 'Reports', icon: BarChart3 },
     ];
 
 export default function AdminLayout({ children }: { children: ReactNode }) {

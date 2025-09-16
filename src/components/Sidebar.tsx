@@ -1,19 +1,13 @@
 'use client';
 
 import {
-    LayoutDashboard,
-    Users,
-    GitBranch,
-    FileText,
-    History,
-    BarChart3,
     Settings,
     LogOut
 } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 
 
-type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'reports';
+type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'report';
 
 interface SidebarProps {
     // activeTab: ActiveTab;
@@ -25,26 +19,10 @@ interface SidebarProps {
 }
 
 export default function Sidebar(props: SidebarProps) {
-    // const menuItems: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
-    //     { id: '', label: 'Dashboard', icon: LayoutDashboard },
-    //     { id: 'users', label: 'User Management', icon: Users },
-    //     { id: 'workflow', label: 'Workflow Config', icon: GitBranch },
-    //     { id: 'forms', label: 'Form Fields', icon: FileText },
-    //     { id: 'audit', label: 'Audit Trail', icon: History },
-    //     { id: 'reports', label: 'Reports', icon: BarChart3 },
-    // ];
 
-    // const menuItems: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
-    //     { id: '', label: 'Dashboard', icon: LayoutDashboard },
-    //     { id: 'users', label: 'User Management', icon: Users },
-    //     { id: 'workflow', label: 'Workflow Config', icon: GitBranch },
-    //     { id: 'forms', label: 'Form Fields', icon: FileText },
-    //     { id: 'audit', label: 'Audit Trail', icon: History },
-    //     { id: 'reports', label: 'Reports', icon: BarChart3 },
-    // ];
     const router = useRouter()
     const pathname = usePathname()
-    // console.log(pathname.split("/")[2])
+
     return (
         <div className="w-64 bg-white shadow-lg">
             <div className="p-6 border-b">

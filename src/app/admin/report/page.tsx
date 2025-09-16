@@ -54,7 +54,7 @@ export default function Reports() {
   }));
 
   const exportReport = (reportType: string) => {
-    let data: any[] = [];
+    let data = [];
     let filename = '';
     
     switch (reportType) {
@@ -89,7 +89,15 @@ export default function Reports() {
     window.URL.revokeObjectURL(url);
   };
 
-  const StatCard = ({ title, value, icon: Icon, color, change }: any) => (
+  interface StatCardProps {
+    title: string;
+    value: string | number;
+    icon: React.ElementType;
+    color: string;
+    change?: string;
+  }
+
+  const StatCard = ({ title, value, icon: Icon, color, change }: StatCardProps) => (
     <div className="bg-white rounded-lg shadow p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -424,10 +432,16 @@ export default function Reports() {
                 <YAxis label={{ value: 'Days', angle: -90, position: 'insideLeft' }} />
                 <Tooltip />
                 <Bar 
-                  dataKey="avgDays" 
-                  fill={(entry: any) => entry.bottleneck ? '#ef4444' : '#3b82f6'}
+                  dataKey="avgDays"
                   name="Average Days"
-                />
+                >
+                  {workflowAnalysisData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.bottleneck ? '#ef4444' : '#3b82f6'}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>

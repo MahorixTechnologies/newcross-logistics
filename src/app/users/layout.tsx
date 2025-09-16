@@ -6,16 +6,16 @@ import Sidebar from '@/components/Sidebar';
 import {
     LayoutDashboard,
     Users,
-    GitBranch,
-    FileText,
-    History,
-    BarChart3,
-    Settings,
-    LogOut
+    // GitBranch,
+    // FileText,
+    // History,
+    // BarChart3,
+    // Settings,
+    // LogOut
 } from 'lucide-react';
 
-export default function AdminLayout({ children }: { children: ReactNode }) {
-type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'reports';
+export default function UserLayout({ children }: { children: ReactNode }) {
+type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'report';
 
   const menuItems: { id: ActiveTab; label: string; icon: React.ElementType }[] = [
         { id: '', label: 'Requests', icon: LayoutDashboard },
@@ -32,7 +32,7 @@ type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'reports';
     return (
         <div className="flex h-screen bg-gray-100">
 
-            <Sidebar menuItems={menuItems} title='Logisctics Request' desc='Request Portal' type="users" />
+            <Sidebar menuItems={menuItems} title='Logistics Request' desc='Request Portal' type="users" />
             <main className="flex-1 overflow-y-auto p-6">
                 <div className="max-w-7xl mx-auto">
                     {children}
