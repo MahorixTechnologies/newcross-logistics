@@ -107,3 +107,4 @@ export interface DashboardMetrics {
   requestsByDepartment: Record<string, number>;
   averageProcessingTime: number;
 }
+

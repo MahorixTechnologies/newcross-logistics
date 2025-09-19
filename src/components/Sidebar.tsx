@@ -7,14 +7,14 @@ import {
 import { usePathname, useRouter } from 'next/navigation';
 
 
-type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'report';
+// type ActiveTab = '' | 'users' | 'workflow' | 'forms' | 'audit' | 'report';
 
 interface SidebarProps {
     // activeTab: ActiveTab;
     // setActiveTab: (tab: ActiveTab) => void;
     title: string;
     desc: string;
-    menuItems: { id: ActiveTab; label: string; icon: React.ElementType }[] ;
+    menuItems: { id: string; label: string; icon: React.ElementType }[] ;
     type:'admin'|'users'
 }
 

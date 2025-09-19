@@ -321,3 +321,4 @@ export const mockDashboardMetrics: DashboardMetrics = {
   },
   averageProcessingTime: 4.5
 };
+
